@@ -1,0 +1,8 @@
+<!--components/NavHeader/Navheader.wxml-->
+<view class="nav-header">
+    <text class="recommendMusic">{{title}}</text>
+    <view class="recommendTitle">
+        <text>{{describe}}</text>
+        <text class="moreBtn">查看更多</text>
+    </view>
+</view>

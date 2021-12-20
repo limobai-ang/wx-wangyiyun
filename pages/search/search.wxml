@@ -1,0 +1,47 @@
+<view class="container">
+    <!-- 搜索区域 -->
+    <view class="herder">
+        <view class="searchInput">
+            <view class="search-icon iconfont icon-31sousuo"></view>
+            <input placeholder="{{searchDefault}}" model:value="{{searchContent}}" bindinput="searchContent"></input>
+            <view hidden="{{searchContent === ''}}" class="search-remove iconfont icon-qingchu" bindtap="searchRemove"></view>
+        </view>
+        <view class="cancel" bindtap="searchRemove">取消</view>
+    </view>
+    <block wx:if="{{searchResultList.length}}">
+        <!-- 模糊匹配数据 -->
+        <view class="dimSearchContainer">
+            <view class="SearchContent">当前搜索 :  {{searchContent}}</view>
+            <view class="searchResultList">
+                <view class="searchItem" wx:for="{{searchResultList}}" wx:key="id">
+                    <text class="search-icon iconfont icon-31sousuo"></text>
+                    <view>{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <!-- 历史记录 -->
+        <view class="history">
+            <view class="title">
+                <text>历史</text>
+                <text class="historyDelete iconfont icon-shanchu" bindtap="historyDelete"></text>
+            </view>
+            <view wx:if="{{historyList.length === 0}}" class="ishistoryList">暂时没有搜索记录</view>
+            <view wx:else class="historyItem">
+                <text wx:for="{{historyList}}" wx:key="key">{{item}}</text>
+            </view>
+        </view>
+        <!-- 热搜区域 -->
+        <view class="hotContainer">
+            <view class="title">热搜榜</view>
+            <view class="content">
+                <view class="hotItem {{index <= 2 ? 'active':''}}" wx:for="{{hotList}}" wx:key="score">
+                    <text>{{index + 1}}</text>
+                    {{item.searchWord}}
+                    <image class="" src="{{item.iconUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,62 @@
+<!--pages/video/video.wxml-->
+<view class="videoContainer">
+    <!-- 头部区域 -->
+    <view class="videoHeider">
+        <image src="/static/image/video-icon.png"></image>
+        <view class="search" bindtap="toSearch">搜索音乐</view>
+        <image src="/static/image/logo.png"></image>
+    </view>
+    <!-- 导航区域 -->
+    <scroll-view class="navScroll" scroll-x enable-flex scroll-into-view="{{'navItem-' + labelId}}" scroll-with-animation>
+        <view id="{{'navItem-' + item.id}}" class="navItem" wx:for="{{labelData}}" wx:key="id" data-index="{{item.id}}" bindtap="setActiveIndex">
+            <view class="navContent {{labelId == item.id ? 'active': ''}}">
+                {{item.name}}
+            </view>
+        </view>
+    </scroll-view>
+    <!-- 视频区域 -->
+    <scroll-view class="videoScroll" 
+    scroll-y 
+    refresher-enabled
+    refresher-default-style="white"
+    refresher-background="#eee"
+    bindrefresherrefresh="updataVideo"
+    refresher-triggered="{{updataState}}"
+    bindscrolltolower="addVideoData"
+    >
+        <view class="videoItem" wx:for="{{videoList}}" wx:key="key">
+            <video 
+            wx:if="{{item.data.vid === videoImageId}}" 
+            id="{{item.data.vid}}" 
+            src="{{item.data.urlInfo.url}}" 
+            poster="{{item.data.coverUrl}}" 
+            bindplay="setPlay" 
+            autoplay
+            bindtimeupdate="videoUpdataTime"
+            bindended="videoEnded"
+            ></video>
+            <image wx:else src="{{item.data.coverUrl}}" data-vid="{{item.data.vid}}" bindtap="setPlay"></image>
+            <view class="content">{{item.data.title}}</view>
+            <view class="footer">
+                <view class="author-profile">
+                    <image src="{{item.data.creator.avatarUrl}}"></image>
+                    <text>{{item.data.creator.nickname}}</text>
+                </view>
+                <view class="author-info">
+                    <view class="like">
+                        <view class="iconfont icon-xihuan1"></view>
+                        <text>{{item.data.praisedCount}}</text>
+                    </view>
+                    <view class="comment">
+                        <view class="iconfont icon-review"></view>
+                        <text>{{item.data.commentCount}}</text>
+                    </view>
+                    <view class="more">
+                        <button open-type="share" class="iconfont icon-gengduo"></button>
+                        <text></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

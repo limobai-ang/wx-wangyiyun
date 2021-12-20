@@ -1,0 +1,97 @@
+/* pages/video/video.wxss */
+.videoHeider {
+    padding: 10rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.videoHeider image {
+    width: 50rpx;
+    height: 50rpx;
+}
+.videoHeider .search {
+    flex: 1;
+    margin: 0 20rpx;
+    border: 1rpx solid #eee;
+    text-align: center;
+    color: #d43c33;
+    border-radius: 25rpx;
+    /* font-size: 26rpx; */
+}
+
+/* 导航区域 */
+.navScroll {
+    display: flex;
+    height: 70rpx;
+}
+.navItem {
+    flex-shrink: 0;
+    padding: 0 20rpx;
+    line-height: 60rpx;
+}
+.active {
+    border-bottom: 4rpx solid #d43c33;
+}
+
+/* 视频区域 */
+.videoScroll {
+    /* 可以动态计算css的宽高 */
+    /* 视口单位： vh vw 1vh = 1%的视口高度  1vw = 1%的视口宽度 */
+    height: calc(100vh - 140rpx);
+}
+.videoItem {
+    padding: 0 20rpx;
+}
+.videoItem video, .videoItem image {
+    width: 100%;
+    height: 400rpx;
+    border-radius: 20rpx;
+}
+.videoItem .content {
+    padding: 20rpx 0;
+    font-size: 28rpx;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 2rpx solid #eee;
+}
+.footer .author-profile {
+    display: flex;
+    align-items: center;
+}
+.footer .author-profile image {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}
+.footer .author-profile text {
+    padding-left:20rpx;
+    font-size: 26rpx;
+}
+
+.footer .author-info {
+    display: flex;
+}
+.footer .author-info>view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20rpx;
+}
+.footer .author-info view view {
+    font-size: 40rpx;
+}
+.footer .author-info view text {
+    font-size: 20rpx;
+}
+.footer .author-info view button {
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 40rpx;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}

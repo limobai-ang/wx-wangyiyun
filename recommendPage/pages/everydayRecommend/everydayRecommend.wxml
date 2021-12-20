@@ -1,0 +1,29 @@
+<!--pages/everydayRecommend/everydayRecommend.wxml-->
+<view class="container">
+    <view class="header">
+        <image src="/static/image/recommendSong.jpg" alt=""/>
+        <view class="current-date">
+            <text>{{ day + ' / ' + month }}</text>
+        </view>
+    </view>
+    <view class="containerList">
+        <view class="headerList">
+            <text>全部播放</text>
+            <text>多选</text>
+        </view>
+        <!-- 内容区 -->
+        <scroll-view class="listScroll" scroll-y>
+            <view class="scrollItem" wx:for="{{everydayRecommendList}}" wx:key="id" data-songs="{{item.id}}" data-index="{{index}}" bindtap="toSongsPlay">
+                <view class="musicInfor">
+                    <image src="{{item.album.picUrl}}"></image>
+                    <view class="musicName">
+                        <text class="song">{{item.name}}</text>
+                        <text class="author">{{item.album.artists[0].name}}</text>
+                    </view>
+                </view>
+                <text class="iconfont icon-gengduo"></text>
+            </view>
+            
+        </scroll-view>
+    </view>
+</view>

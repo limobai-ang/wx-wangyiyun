@@ -1,0 +1,121 @@
+/* pages/songsPlay/songsPlay.wxss */
+.container {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.musicInfoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.musicInfoBox .musicName {
+    color: #fff;
+    padding: 20rpx 0;
+}
+.musicInfoBox .pedestal {
+    width: 60rpx;
+    height: 60rpx;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 2;
+}
+.musicInfoBox .switch {
+    position: relative;
+    left: 58rpx;
+    top: -40rpx;
+    width: 192rpx;
+    height: 274rpx;
+    z-index: 1;
+    transform-origin: 40rpx 0;
+    transition: all 0.3s;
+    
+}
+.musicInfoBox .diskBox {
+    width: 598rpx;
+    height: 598rpx;
+    position: relative;
+    top: -170rpx;
+}
+.diskBoxAnimation {
+    animation: disc 5s linear 0.3s infinite;
+}
+@keyframes disc {
+    form {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.musicInfoBox .diskBox .disk {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.musicInfoBox .diskBox .musicTotuo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 370rpx;
+    height: 370rpx;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* 底部区域 */
+.musicIcon {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40rpx 30rpx;
+    border-top: 4rpx solid #fff;
+    margin-bottom: 60rpx;
+}
+.musicIcon view {
+    font-size: 45rpx;
+    color: #fff;
+}
+.musicIcon .icon-bofang, .musicIcon .icon-zanting {
+    font-size: 80rpx;
+}
+
+/* 进度条 */
+.progressBarBox {
+    position: absolute;
+    bottom: 300rpx;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    align-items: center;
+    color: #fff;
+    
+}
+.progressBarBox .progressBar {
+    position: relative;
+    width: 450rpx;
+    height: 4rpx;
+    background: rgba(0, 0, 0, 0.4);
+    margin: 0 20rpx;
+}
+.progressBarBox .progressBar .currentProgressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4rpx;
+    background-color: #d23e32;
+}
+.progressBarBox .progressBar .currentProgressBar .spherosome {
+    position: absolute;
+    right: 0rpx;
+    top: -4rpx;
+    width: 12rpx;
+    height: 12rpx;
+    background-color: #fff;
+    border-radius: 50%;
+    
+}

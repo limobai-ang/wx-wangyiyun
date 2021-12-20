@@ -1,0 +1,111 @@
+/* pages/search/search.wxss */
+.container {
+    padding: 10rpx 20rpx;
+}
+.herder {
+    display: flex;
+    align-items: center;
+}
+.herder .cancel {
+    width: 100rpx;
+    text-align: center;
+}
+.herder .searchInput {
+    position: relative;
+    background-color: #fafafa;
+    flex: 1;
+    height: 50rxp;
+    line-height: 50rpx;
+    border-radius: 25rpx;
+}
+.herder .searchInput input {
+    padding: 5rpx 50rpx;
+}
+.herder .searchInput .search-icon {
+    position: absolute;
+    left: 10rpx;
+    width: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    color: #8d868d;
+}
+
+.herder .searchInput .search-remove {
+    position: absolute;
+    top: 0;
+    right: 0rpx;
+    width: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    color: #8d868d;
+}
+
+
+/* 热搜榜 */
+.hotContainer .title {
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #eee;
+}
+.hotContainer .content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10rpx;
+}
+.hotContainer .content view {
+    width: 50%;
+    flex-shrink: 0;
+    padding-bottom: 40rpx;
+    font-size: 26rpx
+}
+.hotContainer .content .active {
+    font-weight: 600;
+}
+.hotItem image {
+    width: 30rpx;
+    height: 26rpx;
+}
+
+/* 搜索推荐 */
+.dimSearchContainer .SearchContent {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    padding: 40rpx 0 20rpx;
+    border-bottom: 2rpx solid #d23e32;
+    color: #d23e32;
+}
+.dimSearchContainer .searchResultList .searchItem {
+    display: flex;
+    align-items: center;
+    
+}
+.dimSearchContainer .searchResultList .searchItem text {
+    margin-right: 30rpx;
+}
+.dimSearchContainer .searchResultList .searchItem view {
+    flex: 1;
+    border-bottom: 2rpx solid #eee;
+    padding: 20rpx 0;
+}
+
+/* 历史 */
+.history .title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #eee;
+}
+.history .historyItem {
+    display: flex;
+    flex-wrap: wrap;
+}
+.history .historyItem text {
+    background-color: #eee;
+    padding: 4rpx 20rpx;
+    margin: 10rpx;
+    border-radius: 20rpx;
+}
+.history .ishistoryList {
+    color: #8d868d;
+    padding: 10rpx;
+}

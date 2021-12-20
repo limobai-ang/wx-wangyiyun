@@ -1,0 +1,78 @@
+/* pages/everydayRecommend/everydayRecommend.wxss */
+.header {
+    position: relative;
+}
+.header image {
+    width: 100%;
+    height: 300rpx;
+}
+.header .current-date {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-35%,-35%);
+    font-size: 40rpx;
+    font-weight: 800;
+    color: #fff;
+}
+
+/* 列表区域 */
+.containerList {
+    position: relative;
+    top: -20rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+}
+
+.headerList {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20rpx;
+    padding: 10rpx 20rpx;
+
+}
+
+/* 歌曲 */
+.listScroll {
+    height: calc(100vh - 370rpx);
+}
+.scrollItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14rpx;
+    padding: 10rpx 20rpx;
+}
+.scrollItem .musicInfor {
+    display: flex;
+}
+.scrollItem>text {
+    width: 80rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 40rpx;
+    text-align: right;
+}
+.scrollItem image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+}
+.scrollItem .musicName {
+    display: flex;
+    flex-direction: column;
+}
+.scrollItem .musicName .song {
+    font-size: 34rpx;
+}
+.scrollItem .musicName .author {
+    font-size: 26rpx;
+    color: #666;
+}
+.scrollItem .musicName text {
+    max-width:200px;    
+    overflow: hidden;    
+    text-overflow:ellipsis;    
+    white-space: nowrap;
+}

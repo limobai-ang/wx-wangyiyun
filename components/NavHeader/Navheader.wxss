@@ -1,0 +1,19 @@
+/* components/NavHeader/Navheader.wxss */
+.nav-header .recommendMusic{
+    font-size: 26rpx;
+    color: #ccc;
+}
+.nav-header .recommendTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-header .moreBtn {
+    padding: 6rpx 16rpx;
+    border: 2rpx solid #333;
+    font-size: 22rpx;
+    border-radius: 30rpx;
+}
+.nav-header {
+    padding-bottom: 10rpx;
+}
